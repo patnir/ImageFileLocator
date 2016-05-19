@@ -24,6 +24,8 @@ public partial class frmMain : Form
     public frmMain()
     {
         InitializeComponent();
+
+        txtDirectoryToSearch.Text = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
     }
 
     private void btnClose_Click(object sender, EventArgs e)
@@ -62,26 +64,32 @@ public partial class frmMain : Form
         {
             displayFilesInDirectory(directoryName, "*.bmp");
         }
-        else if (isGIFChecked == true)
+        if (isGIFChecked == true)
         {
             displayFilesInDirectory(directoryName, "*.gif");
         }
-        else if (isJPGChecked == true)
+        if (isJPGChecked == true)
         {
             displayFilesInDirectory(directoryName, "*.jpg");
         }
-        else if (isPNGChecked == true)
+        if (isPNGChecked == true)
         {
             displayFilesInDirectory(directoryName, "*.png");
         }
-        else if (isTIFFChecked == true)
+        if (isTIFFChecked == true)
         {
             displayFilesInDirectory(directoryName, "*.tiff");
         }
-
-        foreach (string subFoldername in Directory.GetDirectories(directoryName))
+        try
         {
-            searchFilesAndPrint(subFoldername);
+            foreach (string subFoldername in Directory.GetDirectories(directoryName))
+            {
+                searchFilesAndPrint(subFoldername);
+            }
+        }
+        catch
+        {
+            return;
         }
     }
 
@@ -89,16 +97,30 @@ public partial class frmMain : Form
     {
         if (isFileNameOnlyChecked == true)
         {
-            foreach (string fileName in Directory.GetFiles(directoryName, extension))
+            try
             {
-                lstDisplayFiles.Items.Add(fileName.Remove(0, directoryName.Length));
+                foreach (string fileName in Directory.GetFiles(directoryName, extension))
+                {
+                    lstDisplayFiles.Items.Add(fileName.Remove(0, directoryName.Length + 1));
+                }
+            }
+            catch (Exception ex)
+            {
+                return;
             }
         }
         else
         {
-            foreach (string fileName in Directory.GetFiles(directoryName, extension))
+            try
             {
-                lstDisplayFiles.Items.Add(fileName);
+                foreach (string fileName in Directory.GetFiles(directoryName, extension))
+                {
+                    lstDisplayFiles.Items.Add(fileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                return;
             }
         }
     }
