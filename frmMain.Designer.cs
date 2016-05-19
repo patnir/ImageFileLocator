@@ -6,15 +6,15 @@
     {
             this.lblImageFileLocator = new System.Windows.Forms.Label();
             this.grpFileFormats = new System.Windows.Forms.GroupBox();
-            this.grpDisplayOptions = new System.Windows.Forms.GroupBox();
-            this.cbxBMP = new System.Windows.Forms.CheckBox();
-            this.cbxGIF = new System.Windows.Forms.CheckBox();
-            this.cbxJPG = new System.Windows.Forms.CheckBox();
-            this.cbxPNG = new System.Windows.Forms.CheckBox();
             this.cbxTIFF = new System.Windows.Forms.CheckBox();
+            this.cbxPNG = new System.Windows.Forms.CheckBox();
+            this.cbxJPG = new System.Windows.Forms.CheckBox();
+            this.cbxGIF = new System.Windows.Forms.CheckBox();
+            this.cbxBMP = new System.Windows.Forms.CheckBox();
+            this.grpDisplayOptions = new System.Windows.Forms.GroupBox();
             this.cbxFileNameOnly = new System.Windows.Forms.CheckBox();
             this.lblDirectoryToSearch = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDirectoryToSearch = new System.Windows.Forms.TextBox();
             this.lstDisplayFiles = new System.Windows.Forms.ListBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnLocateFiles = new System.Windows.Forms.Button();
@@ -46,45 +46,15 @@
             this.grpFileFormats.TabStop = false;
             this.grpFileFormats.Text = "File Formats:";
             // 
-            // grpDisplayOptions
+            // cbxTIFF
             // 
-            this.grpDisplayOptions.Controls.Add(this.cbxFileNameOnly);
-            this.grpDisplayOptions.Location = new System.Drawing.Point(16, 236);
-            this.grpDisplayOptions.Name = "grpDisplayOptions";
-            this.grpDisplayOptions.Size = new System.Drawing.Size(134, 65);
-            this.grpDisplayOptions.TabIndex = 2;
-            this.grpDisplayOptions.TabStop = false;
-            this.grpDisplayOptions.Text = "Display Options";
-            // 
-            // cbxBMP
-            // 
-            this.cbxBMP.AutoSize = true;
-            this.cbxBMP.Location = new System.Drawing.Point(21, 32);
-            this.cbxBMP.Name = "cbxBMP";
-            this.cbxBMP.Size = new System.Drawing.Size(49, 17);
-            this.cbxBMP.TabIndex = 0;
-            this.cbxBMP.Text = "BMP";
-            this.cbxBMP.UseVisualStyleBackColor = true;
-            // 
-            // cbxGIF
-            // 
-            this.cbxGIF.AutoSize = true;
-            this.cbxGIF.Location = new System.Drawing.Point(21, 56);
-            this.cbxGIF.Name = "cbxGIF";
-            this.cbxGIF.Size = new System.Drawing.Size(43, 17);
-            this.cbxGIF.TabIndex = 1;
-            this.cbxGIF.Text = "GIF";
-            this.cbxGIF.UseVisualStyleBackColor = true;
-            // 
-            // cbxJPG
-            // 
-            this.cbxJPG.AutoSize = true;
-            this.cbxJPG.Location = new System.Drawing.Point(21, 80);
-            this.cbxJPG.Name = "cbxJPG";
-            this.cbxJPG.Size = new System.Drawing.Size(46, 17);
-            this.cbxJPG.TabIndex = 2;
-            this.cbxJPG.Text = "JPG";
-            this.cbxJPG.UseVisualStyleBackColor = true;
+            this.cbxTIFF.AutoSize = true;
+            this.cbxTIFF.Location = new System.Drawing.Point(21, 128);
+            this.cbxTIFF.Name = "cbxTIFF";
+            this.cbxTIFF.Size = new System.Drawing.Size(48, 17);
+            this.cbxTIFF.TabIndex = 4;
+            this.cbxTIFF.Text = "TIFF";
+            this.cbxTIFF.UseVisualStyleBackColor = true;
             // 
             // cbxPNG
             // 
@@ -96,15 +66,45 @@
             this.cbxPNG.Text = "PNG";
             this.cbxPNG.UseVisualStyleBackColor = true;
             // 
-            // cbxTIFF
+            // cbxJPG
             // 
-            this.cbxTIFF.AutoSize = true;
-            this.cbxTIFF.Location = new System.Drawing.Point(21, 128);
-            this.cbxTIFF.Name = "cbxTIFF";
-            this.cbxTIFF.Size = new System.Drawing.Size(48, 17);
-            this.cbxTIFF.TabIndex = 4;
-            this.cbxTIFF.Text = "TIFF";
-            this.cbxTIFF.UseVisualStyleBackColor = true;
+            this.cbxJPG.AutoSize = true;
+            this.cbxJPG.Location = new System.Drawing.Point(21, 80);
+            this.cbxJPG.Name = "cbxJPG";
+            this.cbxJPG.Size = new System.Drawing.Size(46, 17);
+            this.cbxJPG.TabIndex = 2;
+            this.cbxJPG.Text = "JPG";
+            this.cbxJPG.UseVisualStyleBackColor = true;
+            // 
+            // cbxGIF
+            // 
+            this.cbxGIF.AutoSize = true;
+            this.cbxGIF.Location = new System.Drawing.Point(21, 56);
+            this.cbxGIF.Name = "cbxGIF";
+            this.cbxGIF.Size = new System.Drawing.Size(43, 17);
+            this.cbxGIF.TabIndex = 1;
+            this.cbxGIF.Text = "GIF";
+            this.cbxGIF.UseVisualStyleBackColor = true;
+            // 
+            // cbxBMP
+            // 
+            this.cbxBMP.AutoSize = true;
+            this.cbxBMP.Location = new System.Drawing.Point(21, 32);
+            this.cbxBMP.Name = "cbxBMP";
+            this.cbxBMP.Size = new System.Drawing.Size(49, 17);
+            this.cbxBMP.TabIndex = 0;
+            this.cbxBMP.Text = "BMP";
+            this.cbxBMP.UseVisualStyleBackColor = true;
+            // 
+            // grpDisplayOptions
+            // 
+            this.grpDisplayOptions.Controls.Add(this.cbxFileNameOnly);
+            this.grpDisplayOptions.Location = new System.Drawing.Point(16, 236);
+            this.grpDisplayOptions.Name = "grpDisplayOptions";
+            this.grpDisplayOptions.Size = new System.Drawing.Size(134, 65);
+            this.grpDisplayOptions.TabIndex = 2;
+            this.grpDisplayOptions.TabStop = false;
+            this.grpDisplayOptions.Text = "Display Options";
             // 
             // cbxFileNameOnly
             // 
@@ -119,22 +119,24 @@
             // lblDirectoryToSearch
             // 
             this.lblDirectoryToSearch.AutoSize = true;
-            this.lblDirectoryToSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDirectoryToSearch.Location = new System.Drawing.Point(16, 332);
+            this.lblDirectoryToSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDirectoryToSearch.Location = new System.Drawing.Point(33, 331);
             this.lblDirectoryToSearch.Name = "lblDirectoryToSearch";
-            this.lblDirectoryToSearch.Size = new System.Drawing.Size(131, 16);
+            this.lblDirectoryToSearch.Size = new System.Drawing.Size(117, 15);
             this.lblDirectoryToSearch.TabIndex = 3;
             this.lblDirectoryToSearch.Text = "Directory To Search:";
             // 
-            // textBox1
+            // txtDirectoryToSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(174, 331);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(527, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtDirectoryToSearch.Location = new System.Drawing.Point(174, 331);
+            this.txtDirectoryToSearch.Name = "txtDirectoryToSearch";
+            this.txtDirectoryToSearch.Size = new System.Drawing.Size(527, 20);
+            this.txtDirectoryToSearch.TabIndex = 4;
             // 
             // lstDisplayFiles
             // 
+            this.lstDisplayFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstDisplayFiles.FormattingEnabled = true;
             this.lstDisplayFiles.Location = new System.Drawing.Point(173, 63);
             this.lstDisplayFiles.Name = "lstDisplayFiles";
@@ -159,6 +161,7 @@
             this.btnLocateFiles.TabIndex = 7;
             this.btnLocateFiles.Text = "Locate Files";
             this.btnLocateFiles.UseVisualStyleBackColor = true;
+            this.btnLocateFiles.Click += new System.EventHandler(this.btnLocateFiles_Click);
             // 
             // frmMain
             // 
@@ -166,12 +169,13 @@
             this.Controls.Add(this.btnLocateFiles);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lstDisplayFiles);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDirectoryToSearch);
             this.Controls.Add(this.lblDirectoryToSearch);
             this.Controls.Add(this.grpDisplayOptions);
             this.Controls.Add(this.grpFileFormats);
             this.Controls.Add(this.lblImageFileLocator);
             this.Name = "frmMain";
+            this.Text = "Image File Locator";
             this.grpFileFormats.ResumeLayout(false);
             this.grpFileFormats.PerformLayout();
             this.grpDisplayOptions.ResumeLayout(false);
@@ -192,7 +196,7 @@
     private System.Windows.Forms.GroupBox grpDisplayOptions;
     private System.Windows.Forms.CheckBox cbxFileNameOnly;
     private System.Windows.Forms.Label lblDirectoryToSearch;
-    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox txtDirectoryToSearch;
     private System.Windows.Forms.ListBox lstDisplayFiles;
     private System.Windows.Forms.Button btnClose;
     private System.Windows.Forms.Button btnLocateFiles;
