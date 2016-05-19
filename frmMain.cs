@@ -13,4 +13,9 @@ public partial class frmMain : Form
     {
         InitializeComponent();
     }
+
+    private void btnClose_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
 }
